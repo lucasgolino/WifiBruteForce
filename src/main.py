@@ -44,7 +44,7 @@ class wifi():
 		self.configWlan()
 
 	def getInfo(self):
-		self.ssid = raw_input("> Digite o SSID da rede: ")
+		self.ssid = raw_input("> SSID: ")
 
 	def configWlan(self):
 		self.cmd.RunShell("iwconfig %s essid %s" % (self.port, self.ssid))
@@ -65,7 +65,7 @@ class wifi():
 
 
 	def matchPass(self, passwd, digest):
-		return sys.exit("> THE PASSWORD - %s - (HASH: %s)" % (passwd, digest))
+		return sys.exit("> PASSWD - %s - (HASH: %s)" % (passwd, digest))
 
 class main():
 	def __init__(self):
@@ -78,9 +78,9 @@ class main():
 		init_bf.force(self.lenght['min'], self.lenght['max'])
 
 	def getInfo(self):
-		self.lenght['min'] = int(raw_input("> Digite tamanho minimo: "))
-		self.lenght['max'] = int(raw_input("> Digite tamanho maximo: "))
-		self.hash = raw_input("> Digite a Hash de busca: ")
+		self.lenght['min'] = int(raw_input("> min size: "))
+		self.lenght['max'] = int(raw_input("> max size: "))
+		self.hash = raw_input("> search hash: ")
 
 main()
 
